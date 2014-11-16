@@ -1,7 +1,7 @@
 <!-- -*- mode: XML -*- -->
 <launch>
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find ric_description)/komodo/ric_robot_control.yaml" command="load"/>
+  <rosparam file="$(find komodo_gazebo)/config/ric_robot_control.yaml" command="load"/>
 
   <!-- load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
@@ -16,6 +16,7 @@
 					   wrist_controller
 					   left_finger_controller
 					   right_finger_controller
+					   elevator_controller
 					   joint_state_controller 
 					   "/>
 
